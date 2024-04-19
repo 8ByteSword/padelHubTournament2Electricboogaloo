@@ -19,6 +19,20 @@ Este proyecto es una aplicación web para la gestión de reservas, torneos, liga
 
 La aplicación sigue una arquitectura cliente-servidor, donde el frontend en Svelte se encarga de la interfaz de usuario y la interacción con el usuario, mientras que el backend en FastAPI proporciona una API RESTful para la gestión de datos y la lógica de negocio. La comunicación en tiempo real se realiza a través de WebSockets o Socket.IO para actualizar la información en tiempo real. La base de datos PostgreSQL almacena los datos de reservas, torneos, ligas y partidas.
 
+```mermaid
+graph LR;
+  A[Frontend] -- API RESTful --> B[Backend]
+  B -- Consultas y comandos --> C[Base de datos]
+  B -- WebSocket/Socket.IO --> A
+```
+- Frontend (Svelte): Se encarga de la interfaz de usuario y la interacción con el usuario. Envía solicitudes al backend a través de la API RESTful y recibe actualizaciones en tiempo real mediante WebSockets o Socket.IO.
+
+- Backend (FastAPI): Proporciona una API RESTful para la gestión de datos y la lógica de negocio. Recibe las solicitudes del frontend, procesa los datos y se comunica con la base de datos. También envía actualizaciones en tiempo real al frontend a través de WebSockets o Socket.IO.
+
+- Base de datos (PostgreSQL): Almacena los datos de reservas, torneos, ligas y partidas. El backend interactúa con la base de datos para realizar consultas y comandos.
+
+La comunicación en tiempo real entre el frontend y el backend se realiza mediante WebSockets o Socket.IO, lo que permite actualizar la información en la interfaz de usuario de manera instantánea.
+
 ## Configuración del entorno de desarrollo
 
 ### Requisitos previos
@@ -46,6 +60,7 @@ La aplicación sigue una arquitectura cliente-servidor, donde el frontend en Sve
 La aplicación estará disponible en `http://localhost:5173` (frontend) y `http://localhost:8000` (backend).
 
 ## Estructura del proyecto
+```
 club-padel/
 ├── frontend/
 │ ├── src/
@@ -71,7 +86,7 @@ club-padel/
 │ ├── requirements.txt
 │ └── ...
 └── ...
-
+```
 
 - `frontend/`: Contiene el código fuente del frontend en Svelte, incluyendo componentes, rutas, stores y utilidades.
 - `backend/`: Contiene el código fuente del backend en FastAPI, incluyendo modelos, esquemas, APIs y utilidades.
