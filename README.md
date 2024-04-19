@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://github.com/8ByteSword/padelHubTournament2Electricboogaloo/assets/72978286/677ca6e7-f874-4da4-80b8-8de480bf64a1" width="200px">
+</div>
+
 # Club de Pádel - Gestión de Reservas y Torneos
 
 Este proyecto es una aplicación web para la gestión de reservas, torneos, ligas y partidas en un club de pádel. Está construido con un frontend en Svelte, utilizando Tailwind CSS para los estilos, y un backend en Python con FastAPI. La comunicación en tiempo real se realiza a través de WebSockets (integrados en FastAPI) o Socket.IO. La base de datos utilizada es PostgreSQL.
